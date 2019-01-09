@@ -1,7 +1,7 @@
 *.gem
 .sass-cache
-bootstrap.css
-bootstrap-responsive.css
+#bootstrap.css
+#bootstrap-responsive.css
 Gemfile.lock
 *.gemfile.lock
 .rvmrc
