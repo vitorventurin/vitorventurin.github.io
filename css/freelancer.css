@@ -5,7 +5,7 @@
  */
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Lato';
 }
 
 h1,
@@ -15,7 +15,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  font-family: 'Lato';
+  font-family: 'Montserrat';
 }
 
 hr.star-light,
@@ -112,7 +112,7 @@ section h2 {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-weight: 700;
-  font-family: 'Lato';
+  font-family: 'Montserrat';
 }
 
 #mainNav .navbar-brand {
@@ -189,7 +189,7 @@ header.masthead h1 {
 
 header.masthead h2 {
   font-size: 1.3rem;
-  font-family: 'Montserrat';
+  font-family: 'Lato';
 }
 
 @media (min-width: 992px) {
@@ -221,7 +221,7 @@ header.masthead h2 {
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background-color: rgba(85, 85, 85, 0.9);
+  background-color: rgba(255, 69, 0, 0.9);
 }
 
 .portfolio .portfolio-item .portfolio-item-caption:hover {
@@ -353,11 +353,15 @@ a:focus, a:hover, a:active {
 }
 
 .bg-primary {
-  background-color: #555 !important;
+  background-color: #FF4500 !important;
 }
 
 .bg-secondary {
   background-color: #333 !important;
+}
+
+.bg-tertiary {
+  background-color: #000 !important;
 }
 
 .text-primary {
