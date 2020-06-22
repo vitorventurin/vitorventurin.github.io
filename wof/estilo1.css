@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,400&display=swap');
+body {
+    overflow:hidden; 
+    background: #333;
+    margin: 0;
+    padding: 0;
+}
+.main {
+	font-family: 'Lato', sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+.main h2 {
+	font-weight: 300;
+}
+
+.main p {
+	font-style: italic;
+	font-weight: 400;
+}
