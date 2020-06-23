@@ -1,5 +1,6 @@
 
-let audio = new Audio('tick.mp3');
+// let audio = new Audio('metronone.wav');
+var audio1 = document.getElementById('audio1');
 var width = window.innerWidth;
 var height = width;//window.innerHeight;
 
@@ -251,11 +252,11 @@ lastRotation = wheel.rotation();
 
 function playSound() {
     // Stop and rewind the sound if it already happens to be playing.
-    audio.pause();
-    audio.currentTime = 0;
+    // audio1.pause();
+    // audio1.currentTime = 0;
 
     // Play the sound.
-    audio.play();
+    audio1.play();
 }
 
 if (shape) {
