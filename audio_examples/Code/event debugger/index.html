@@ -1,0 +1,215 @@
+<html>
+<head>
+<title></title>
+<style type="text/css">
+/** quick and dirty css reset **/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+audio {
+    width: 400px;
+}
+
+table {
+    border-right: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+    width: 400px;
+}
+
+td, th {
+    padding: 2px 5px;
+    border-left: 1px solid #AAA;
+    border-top: 1px solid #AAA;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+}
+
+button {
+    padding: 3px 5px;
+}
+​</style>
+</head>
+<body>
+<audio id="audio" controls>
+    <source src="song.m4a" type="audio/mpeg" />
+    <source src="song.ogg" type="audio/ogg" />
+</audio>
+<table cellspacing="0" id="table">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Fired</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>abort</td>
+            <td id="event-abort"></td>
+            <td><button onclick="emptyAudio();">abort audio</button></td>
+        </tr>
+        <tr>
+            <td>canplay</td>
+            <td id="event-canplay"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>canplaythrough</td>
+            <td id="event-canplaythrough"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>durationchange</td>
+            <td id="event-durationchange"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>emptied</td>
+            <td id="event-emptied"></td>
+            <td><button onclick="emptyAudio();">empty audio</button></td>
+        </tr>
+        <tr>
+            <td>ended</td>
+            <td id="event-ended"></td>
+            <td><button onclick="audio.currentTime = audio.duration;">seek to end of audio</button></td>
+        </tr>
+        <tr>
+            <td>error</td>
+            <td id="event-error"></td>
+            <td><button onclick="emptyAudio();">add invalid URL</button></td>
+        </tr>
+        <tr>
+            <td>loadeddata</td>
+            <td id="event-loadeddata"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>loadedmetadata</td>
+            <td id="event-loadedmetadata"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>loadstart</td>
+            <td id="event-loadstart"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>pause</td>
+            <td id="event-pause"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>play</td>
+            <td id="event-play"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>playing</td>
+            <td id="event-playing"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>progress</td>
+            <td id="event-progress"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ratechange</td>
+            <td id="event-ratechange"></td>
+            <td><button onclick="changePlaybackRate(this);">change playbackRate to 0.5</button></td>
+        </tr>
+        <tr>
+            <td>seeked</td>
+            <td id="event-seeked"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>seeking</td>
+            <td id="event-seeking"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>stalled</td>
+            <td id="event-stalled"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>suspend</td>
+            <td id="event-suspend"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>timeupdate</td>
+            <td id="event-timeupdate"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>volumechange</td>
+            <td id="event-volumechange"></td>
+            <td><button onclick="changeVolume(this);">change volume to 0.5</button></td>
+        </tr>
+        <tr>
+            <td>waiting</td>
+            <td id="event-waiting"></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>​
+
+<script type="text/javascript">
+    var audio = document.getElementById('audio');
+    var table = document.getElementById('table');
+    
+    // list of events to track
+    var events = 'abort,canplay,canplaythrough,durationchange,emptied,ended,error,loadeddata,loadedmetadata,loadstart,pause,play,playing,progress,ratechange,seeked,seeking,stalled,suspend,timeupdate,volumechange,waiting'.split(',');
+    
+    // event handler
+    var onEvent = function(e) {
+        document.getElementById('event-' + e.type).innerHTML = 'X'; // mark event fired in table
+        this.removeEventListener(e.type, onEvent, false); // remove event listener
+    };
+    
+    // add event listener to audio for all events
+    for (var i = 0, len = events.length; i < len; i++) {
+        audio.addEventListener(events[i], onEvent, false);
+    }
+    
+    // change playback rate
+    var changePlaybackRate = function(button) {
+        if (audio.playbackRate !== 1) {
+            audio.playbackRate = 1;
+            button.innerHTML = 'change playbackRate to 0.5';
+        } else {
+            audio.playbackRate = 0.5;
+            button.innerHTML = 'change playbackRate to 1';
+        }
+    };
+    
+    // change volume
+    var changeVolume = function(button) {
+        if (audio.volume !== 1) {
+            audio.volume = 1;
+            button.innerHTML = 'change volume to 0.5';
+        } else {
+            audio.volume = 0.5;
+            button.innerHTML = 'change volume to 1';
+        }
+    };
+    
+    // invalidate audio source (will fire abort, emptied, and error)
+    var emptyAudio = function() {
+        audio.src = 'invalid_url.m4a';
+    };
+</script>
+</body>
+</html>

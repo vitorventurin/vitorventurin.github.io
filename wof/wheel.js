@@ -4,6 +4,7 @@ var audio1 = document.getElementById('audio1');
 var width = window.innerWidth;
 var height = width;//window.innerHeight;
 
+var context;
 Konva.angleDeg = false;
 var angularVelocity = 0;
 var initialVelocity = 0;
@@ -17,8 +18,9 @@ var target, activeWedge, stage, layer, wheel, pointer;
 var radius = 400;
 var finished = true;
 var slicewidth = 0;
-var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
-var fontname = "Calibri";
+// var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+var canvas = document.getElementById('canvas1');
+var fontname = 'Kavivanar';
 var waspositive = false;
 
 function getRandomReward() {
@@ -93,16 +95,16 @@ function getTextWidth(text, font, size, height, total) {
 		}
 		return max;
 	}
-// getTextWidth("hello there!", "bold 12pt arial")
-// re-use canvas object for better performance
-// var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
-var context = canvas.getContext("2d");
-context.font = font + " " + size;
-if(height){
-	return -1;
-}
-var metrics = context.measureText(text);
-return metrics.width;
+	// getTextWidth("hello there!", "bold 12pt arial")
+	// re-use canvas object for better performance
+	// var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+	context = canvas.getContext("2d");
+	context.font = font + " " + size;
+	if(height){
+		return -1;
+	}
+	var metrics = context.measureText(text);
+	return metrics.width;
 }
 
 
@@ -116,67 +118,67 @@ function isUndefined(n) {
 
 function addWedge(n) {
 	var s = getRandomColor();
-var reward = s[3];// getRandomReward();
-var size = 16;
-if (isNumeric(reward)) {
-	reward = "" + reward;
-}
-reward = Array.from(reward).join('\n');
+	var reward = s[3];// getRandomReward();
+	var size = 10; // font character spacing
+	if (isNumeric(reward)) {
+		reward = "" + reward;
+	}
+	reward = Array.from(reward).join('\n');
 
-var r = s[0];
-var g = s[1];
-var b = s[2];
-var angle = (2 * Math.PI) / numWedges;
+	var r = s[0];
+	var g = s[1];
+	var b = s[2];
+	var angle = (2 * Math.PI) / numWedges;
 
-var endColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-r += 100;
-g += 100;
-b += 100;
+	var endColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+	r += 100;
+	g += 100;
+	b += 100;
 
-var startColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+	var startColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
-var wedge = new Konva.Group({
-	rotation: (2 * n * Math.PI) / numWedges
-});
+	var wedge = new Konva.Group({
+		rotation: (2 * n * Math.PI) / numWedges
+	});
 
-var wedgeBackground = new Konva.Wedge({
-	radius: radius,
-	angle: angle,
-	fillRadialGradientStartPoint: 0,
-	fillRadialGradientStartRadius: 0,
-	fillRadialGradientEndPoint: 0,
-	fillRadialGradientEndRadius: radius,
-	fillRadialGradientColorStops: [0, startColor, 1, endColor],
-	fill: '#64e9f8',
-	fillPriority: 'radial-gradient',
-	stroke: '#ccc',
-	strokeWidth: 2
-});
+	var wedgeBackground = new Konva.Wedge({
+		radius: radius,
+		angle: angle,
+		fillRadialGradientStartPoint: 0,
+		fillRadialGradientStartRadius: 0,
+		fillRadialGradientEndPoint: 0,
+		fillRadialGradientEndRadius: radius,
+		fillRadialGradientColorStops: [0, startColor, 1, endColor],
+		fill: '#64e9f8',
+		fillPriority: 'radial-gradient',
+		stroke: '#ccc',
+		strokeWidth: 2
+	});
 
-wedge.add(wedgeBackground);
-var y = getTextWidth(reward, fontname, size, false);
-//console.log("REWARD: " + reward.split('\n').join('') + " slicewidth: " + slicewidth + " WIDTH: " + y);
+	wedge.add(wedgeBackground);
+	var y = getTextWidth(reward, fontname, size, false);
+	//console.log("REWARD: " + reward.split('\n').join('') + " slicewidth: " + slicewidth + " WIDTH: " + y);
 
-var text = new Konva.Text({
-	text: reward,
-	fontFamily: fontname,
-	fontSize: minsize(reward, radius * 0.5, fontname, size),
-	fill: 'white',
-	align: 'center',
-	stroke: 'yellow',
-	strokeWidth: 1,
-	rotation: (Math.PI + angle) / 2,
-	x: radius - 20,
-	y: slicewidth - y * 2,
-	listening: false
-});
+	var text = new Konva.Text({
+		text: reward,
+		fontFamily: fontname,
+		fontSize: 20,//minsize(reward, radius * 0.5, fontname, size),
+		fill: 'white',
+		align: 'center',
+		stroke: 'yellow',
+		strokeWidth: 1,
+		rotation: (Math.PI + angle) / 2,
+		x: radius - 20,
+		y: slicewidth - y * 2,
+		listening: false
+	});
 
-wedge.add(text);
-text.cache();
+	wedge.add(text);
+	text.cache();
 
-wedge.startRotation = wedge.rotation();
+	wedge.startRotation = wedge.rotation();
 
-wheel.add(wedge);
+	wheel.add(wedge);
 }
 
 function minsize(text, maxheight, fontname, maxfontsize){
@@ -193,67 +195,67 @@ height = getTextWidth(text, fontname, maxfontsize, true, true);
 }
 
 console.log("minsize: " + text.split('\n').join("[N]") + " max height: " + maxheight + " fontname: " + fontname + " maxfontsize: " + maxfontsize + " height: " + height);
-*/
-return maxfontsize;
+
+	return maxfontsize; */
 }
 
 function animate(frame) {
-// handle wheel spin
-var angularVelocityChange = (angularVelocity * frame.timeDiff * (1 - angularFriction)) / 1000;
-angularVelocity -= angularVelocityChange;
+	// handle wheel spin
+	var angularVelocityChange = (angularVelocity * frame.timeDiff * (1 - angularFriction)) / 1000;
+	angularVelocity -= angularVelocityChange;
 
-// activate / deactivate wedges based on point intersection
-var shape = stage.getIntersection({
-	x: stage.width() / 2,
-	y: 100
-});
+	// activate / deactivate wedges based on point intersection
+	var shape = stage.getIntersection({
+		x: stage.width() / 2,
+		y: 100
+	});
 
-if (controlled) {
-	if (angularVelocities.length > 10) {
-		angularVelocities.shift();
+	if (controlled) {
+		if (angularVelocities.length > 10) {
+			angularVelocities.shift();
+		}
+
+		angularVelocities.push(
+			((wheel.rotation() - lastRotation) * 1000) / frame.timeDiff
+			);
+	} else if(initialVelocity > 0 && !finished) {
+		var diff = (frame.timeDiff * Math.abs(angularVelocity)) / 1000;
+
+	//console.log("diff: " + diff + " angularVelocity: " + angularVelocity + " FINSISHED: " + tobool(finished) + " controlled: " + tobool(controlled) + " above fraction: " + tobool(diff > 0.0001));
+
+	if (diff > 0.0001){// || diff < -0.0001) {
+		if(!waspositive && diff > 0){
+			diff = -diff;
+		}
+		wheel.rotate(diff);
+	} else if (!controlled) {
+		if (shape) {
+			var text = shape
+			.getParent()
+			.findOne('Text')
+			.text();
+			var price = text.split('\n').join('');
+	//if (first) {
+	// first = false;
+	//} else
+	if (Math.abs(initialVelocity) < 2) {
+		alert("Try a faster spin");
+	} else {
+	alert('Your reward is ' + price);// + " initialVelocity: " + initialVelocity + " waspositive: " + tobool(waspositive));
 	}
-
-	angularVelocities.push(
-		((wheel.rotation() - lastRotation) * 1000) / frame.timeDiff
-		);
-} else if(initialVelocity > 0 && !finished) {
-	var diff = (frame.timeDiff * Math.abs(angularVelocity)) / 1000;
-
-//console.log("diff: " + diff + " angularVelocity: " + angularVelocity + " FINSISHED: " + tobool(finished) + " controlled: " + tobool(controlled) + " above fraction: " + tobool(diff > 0.0001));
-
-if (diff > 0.0001){// || diff < -0.0001) {
-	if(!waspositive && diff > 0){
-		diff = -diff;
+	} else {
+	//console.log("SHAPE NOT FOUND");
 	}
-	wheel.rotate(diff);
-} else if (!controlled) {
-	if (shape) {
-		var text = shape
-		.getParent()
-		.findOne('Text')
-		.text();
-		var price = text.split('\n').join('');
-//if (first) {
-// first = false;
-//} else
-if (Math.abs(initialVelocity) < 2) {
-	alert("Try a faster spin");
-} else {
-alert('Your reward is ' + price);// + " initialVelocity: " + initialVelocity + " waspositive: " + tobool(waspositive));
-}
-} else {
-//console.log("SHAPE NOT FOUND");
-}
-finished = true;
-}
+	finished = true;
+	}
 }
 
 lastRotation = wheel.rotation();
 
 function playSound() {
     // Stop and rewind the sound if it already happens to be playing.
-    // audio1.pause();
-    // audio1.currentTime = 0;
+    audio1.pause();
+    audio1.currentTime = 0;
 
     // Play the sound.
     audio1.play();
@@ -271,7 +273,7 @@ if (shape) {
 			onFinish: function () {
 				//play sound:
 				playSound();
-	        },
+			},
 		}).play();
 
 		if (activeWedge) {
@@ -403,7 +405,7 @@ init();
 
 // fit stage
 function fitStageIntoParentContainer() {
-    var container = document.querySelector('#stage-parent');
+	var container = document.querySelector('#stage-parent');
     // now we need to fit stage into parent
     var containerWidth = container.offsetWidth;
     // to do this we need to scale the stage
@@ -420,19 +422,63 @@ fitStageIntoParentContainer();
 window.addEventListener('resize', fitStageIntoParentContainer);
 
 
-//deprecated: resizing event
-// window.addEventListener("resize", updateCanvas);
 
-// function updateCanvas() {
-//   // update canvas size (and position) here
-//   width = window.innerWidth;
-//   height = width;
-//   // height = window.innerHeight;
-// 	console.log("resized: " + canvas.width + "w");// + " | " + canvas.height + "h");
+//font
+var isFontLoaded = false;
+var TEXT_TEXT = 'Some test text;';
+var initialMeasure = context.measureText(TEXT_TEXT);
+var initialWidth = initialMeasure.width;
 
-//   // redraw canvas content based on new size
-//   // ...
-//   // init();
-// }
+function whenFontIsLoaded(callback, attemptCount) {
+	if (attemptCount === undefined) {
+		attemptCount = 0;
+	}
+	if (attemptCount >= 20) {
+		callback();
+		return;
+	}
+	if (isFontLoaded) {
+		callback();
+		return;
+	}
+	const metrics = context.measureText(TEXT_TEXT);
+	const width = metrics.width;
+	if (width !== initialWidth) {
+		isFontLoaded = true;
+		callback();
+	} else {
+		setTimeout(function () {
+			whenFontIsLoaded(callback, attemptCount + 1);
+		}, 1000);
+	}
+}
 
-// updateCanvas();   // initial call
+  // NOW build our stage
+  // var width = window.innerWidth;
+  // var height = window.innerHeight;
+
+  // var stage = new Konva.Stage({
+  // 	container: 'container',
+  // 	width: width,
+  // 	height: height,
+  // });
+
+  // var layer = new Konva.Layer();
+  // stage.add(layer);
+  // var text = new Konva.Text({
+  // 	x: 50,
+  // 	y: 50,
+  // 	fontSize: 40,
+  // 	text: 'A text with custom font.',
+  // 	width: 250,
+  // });
+
+  // layer.add(text);
+  // layer.draw();
+
+  whenFontIsLoaded(function () {
+	// set font style when font is loaded
+	// so Konva will recalculate text wrapping if it has limited width
+	text.fontFamily('Kavivanar');
+	layer.draw();
+});

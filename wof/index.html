@@ -12,24 +12,27 @@
 		<script src="https://unpkg.com/konva@6.0.0/konva.min.js"></script>
 		<link rel="apple-touch-icon" href="icon.png">
 		<link rel="stylesheet" href="bootflat/css/site.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Kavivanar" rel="stylesheet"/>
 		<style type="text/css">
 			body {
-		        margin: 0;
-		        padding: 0;
-		        overflow: hidden;
-		        background-color: #f0f0f0;
-		    }
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background-color: #f0f0f0;
+			}
 
-		    #stage-parent {
-		    	width: 100%;
-		    }
+			#stage-parent {
+				width: 100%;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="stage-parent">
 			<h3 style="text-align: center;">Wheel of Fortune</h2>
 			<p style="text-align: center;">Swipe to spin!</p>
-			<div id="game"></div>
+			<div id="game">
+				<canvas id="canvas1"></canvas>
+			</div>
 		</div>
 		<audio id="audio1" preload="auto">
 		 <source src="metronome.wav" type="audio/wav" />
