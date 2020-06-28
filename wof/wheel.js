@@ -20,25 +20,37 @@ var finished = true;
 var slicewidth = 0;
 // var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
 var canvas = document.getElementById('canvas1');
-var fontname = 'Kavivanar';
+var fontname = "'Arial'";
 var waspositive = false;
+
+// VITOR //
+
+var arrayDeNumeros = ["1","2","3","4","5","6","7","8","9","10","11","12", "13", "14", "15", "16", "17", "18", "19", "20"]
+
+/*
 
 function getRandomReward() {
 	var mainDigit = Math.round(Math.random() * 9) * 100;
 	var before = mainDigit;
 	if(mainDigit == 0){
-		mainDigit = "BANKRUPT";
+		mainDigit = "0";
 	}
 //console.log("CHECKING: " + mainDigit + " BEFORE: " + before + iif(mainDigit == 0, " IS ZERO"));
 return mainDigit + "";
+}
+
+*/
+
+function getRandomNumber(){
+	return Math.round(Math.random() * 9) * 100;
 }
 
 function getRandomColor() {
 	var r = 100 + Math.round(Math.random() * 55);
 	var g = 100 + Math.round(Math.random() * 55);
 	var b = 100 + Math.round(Math.random() * 55);
-	var s = getRandomReward();
-	if(s == "BANKRUPT"){
+	var s = getRandomNumber();//getRandomReward();
+	if(s == "0"){
 r = 0; g = 0; b = 0;//black
 }
 return purifyColor([r, g, b], s);
@@ -118,7 +130,7 @@ function isUndefined(n) {
 
 function addWedge(n) {
 	var s = getRandomColor();
-	var reward = s[3];// getRandomReward();
+	var reward = arrayDeNumeros[Math.round(Math.random() * 19)];//s[3];// getRandomReward();
 	var size = 10; // font character spacing
 	if (isNumeric(reward)) {
 		reward = "" + reward;
@@ -453,32 +465,9 @@ function whenFontIsLoaded(callback, attemptCount) {
 	}
 }
 
-  // NOW build our stage
-  // var width = window.innerWidth;
-  // var height = window.innerHeight;
-
-  // var stage = new Konva.Stage({
-  // 	container: 'container',
-  // 	width: width,
-  // 	height: height,
-  // });
-
-  // var layer = new Konva.Layer();
-  // stage.add(layer);
-  // var text = new Konva.Text({
-  // 	x: 50,
-  // 	y: 50,
-  // 	fontSize: 40,
-  // 	text: 'A text with custom font.',
-  // 	width: 250,
-  // });
-
-  // layer.add(text);
-  // layer.draw();
-
   whenFontIsLoaded(function () {
 	// set font style when font is loaded
 	// so Konva will recalculate text wrapping if it has limited width
-	text.fontFamily('Kavivanar');
+	text.fontFamily(fontname);
 	layer.draw();
 });
