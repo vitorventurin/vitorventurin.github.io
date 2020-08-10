@@ -18,7 +18,7 @@
     <meta name="author" content="Vitor Venturin">
     <meta name="keywords" content="Vitor Venturin, iOS, Apple, Developer, Programmer, Netherlands, Brasil, Holland, Italy, Europe, freelancer, zzp, Amsterdam, Haze studio, Vitor Linhalis, kvk">
 
-    <title>Vitor Venturin dev porfolio</title>
+    <title>Portfolio by Vitor Venturin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,6 +50,9 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#music">Music</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
@@ -152,6 +155,33 @@
       </div>
     </section>
 
+    <!-- Music Grid Section -->
+    <section class="music bg-primary" id="music">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Music and Sound Design</h2>
+        <hr class="mb-5">
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <iframe src="https://open.spotify.com/embed/artist/5rBwFAceloiix0g6N0xypG" width="100%" height="420" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <img class="img-fluid img-thumbnail" src="img/haze.jpg"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secret Section -->
+    <section class="secret" id="secret">
+      <div class="container">
+        <h2 id="jokeSetup" class="text-center text-uppercase text-secondary mb-0">Why do Java Programmers wear glasses?</h2>
+        <hr class="mb-5">
+        <div class="row"></div>
+          <h3 id="jokePunchline" class="text-center">Because they don't C#.</h3>
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section class="bg-tertiary text-white mb-0" id="about">
       <div class="container">
@@ -171,7 +201,7 @@
       </div>
     </section>
 
-<!-- Contact Section -->
+  <!-- Contact Section -->
     <section id="contact">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Publishings</h2>
@@ -358,7 +388,7 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
               <h2 class="text-secondary text-uppercase mb-0">Banco Safra</h2>
               <hr class="mb-5">
               <img class="img-fluid mb-5" src="img/portfolio/safra.png" alt="">
-              <p class="mb-5">Com o Safra Mobile Banking você pode acessar sua conta corrente e realizar operações com tranquilidade, segurança, comodidade e agilidade. Antes de utilizar o aplicativo, leia atentamente os Termos de Uso e Política de Privacidade.</p>
+              <p class="mb-5">Com o Safra Mobile Banking vocêpode acessar sua conta corrente e realizar operações com tranquilidade, segurança, comodidade e agilidade. Antes de utilizar o aplicativo, leia atentamente os Termos de Uso e Política de Privacidade.</p>
               <div class="mb-5 embed-responsive embed-responsive-16by9">
               	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QKiN8FDr7c0" allowfullscreen></iframe>
           	  </div>
@@ -388,14 +418,14 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
               <img class="img-fluid mb-5" src="img/portfolio/memefy.png" alt="">
               <p class="mb-5">Decorate your photos with funny stickers and share it with your friends! Memefy allows you to take photos of your friends or environment and turn them into hilarious masterpieces.
               	<br>1. Take a photo or choose one from your photo library. 
-<br>2. Open the stickers trunk and choose from several unique illustrations. 
-<br>3. Slap them everywhere, scale, rotate and flip. 
-<br>4. Easily save your creations on the roll. 
-<br>
-<br>Tag all your photos with #Memefy and join the fun!</p>
-<div class="mb-5 embed-responsive embed-responsive-16by9">
-<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dVzhBknskXs" allowfullscreen></iframe>
-</div>
+                <br>2. Open the stickers trunk and choose from several unique illustrations. 
+                <br>3. Slap them everywhere, scale, rotate and flip. 
+                <br>4. Easily save your creations on the roll. 
+                <br>
+                <br>Tag all your photos with #Memefy and join the fun!</p>
+                <div class="mb-5 embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dVzhBknskXs" allowfullscreen></iframe>
+                </div>
               <a class="btn btn-info btn-lg rounded-pill" href="https://itunes.apple.com/us/app/memefy/id1015251873?mt=8" target="_blank">
                 <i class="fa fa-download"></i>
                 Download for iPhone</a>
@@ -448,6 +478,17 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
+    <script>
+      let joke = 
+      fetch('https://official-joke-api.appspot.com/random_joke')
+      .then(response => response.json())
+      .then(data => {
+        const setup = data.setup;
+        const punchLine = data.punchline;
+        $('#jokeSetup').text(setup);
+        $('#jokePunchline').text(punchLine);
+      });
+    </script>
 
   </body>
 
