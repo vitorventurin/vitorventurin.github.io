@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>compileBitcode</key>
+	<true/>
+	<key>destination</key>
+	<string>export</string>
+	<key>manifest</key>
+	<dict>
+		<key>appURL</key>
+		<string>https://vitorventurin.github.io/sopa/BankApp.ipa</string>
+		<key>displayImageURL</key>
+		<string>https://vitorventurin.github.io/sopa/BankApp57.png</string>
+		<key>fullSizeImageURL</key>
+		<string>https://vitorventurin.github.io/sopa/BankApp512.png</string>
+	</dict>
+	<key>method</key>
+	<string>ad-hoc</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>io.github.vitorventurin.BankApp</key>
+		<string>io.github.vitorventurin.BankApp.AdHoc</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>7D11EFC8BB1FE3E339120CCE5527132AF8853D72</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>stripSwiftSymbols</key>
+	<true/>
+	<key>teamID</key>
+	<string>XQN3A35EM8</string>
+	<key>thinning</key>
+	<string>&lt;none&gt;</string>
+</dict>
+</plist>
