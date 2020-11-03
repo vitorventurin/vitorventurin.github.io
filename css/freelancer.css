@@ -66,13 +66,13 @@ section {
 }
 
 section h2 {
-  padding-top: 2rem;
   font-size: 2.25rem;
   line-height: 2rem;
 }
 
 @media (min-width: 992px) {
   section h2 {
+    margin-top: 2rem;
     font-size: 3rem;
     line-height: 2.5rem;
   }
@@ -150,12 +150,10 @@ section h2 {
   #mainNav {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
     font-size: 2em;
-    -webkit-transition: font-size 0.3s;
     transition: font-size 0.3s;
   }
   #mainNav .navbar-nav {
@@ -219,7 +217,6 @@ header.masthead h2 {
 }
 
 .portfolio .portfolio-item .portfolio-item-caption {
-  -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
   background-color: rgba(255, 69, 0, 0.9);
@@ -248,7 +245,6 @@ header.masthead h2 {
   margin: 1rem calc(1rem - 8px);
   position: relative;
   z-index: 2;
-  -webkit-box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5);
 }
 
@@ -293,7 +289,6 @@ header.masthead h2 {
   border: none;
   border-radius: 0;
   background: none;
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 
@@ -305,7 +300,6 @@ header.masthead h2 {
   top: 2em;
   display: block;
   margin: 0;
-  -webkit-transition: top 0.3s ease, opacity 0.3s ease;
   transition: top 0.3s ease, opacity 0.3s ease;
   vertical-align: middle;
   vertical-align: baseline;

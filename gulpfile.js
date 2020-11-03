@@ -68,10 +68,7 @@ function css() {
       outputStyle: "expanded"
     }))
     .on("error", sass.logError)
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
+    .pipe(autoprefixer())
     .pipe(header(banner, {
       pkg: pkg
     }))
