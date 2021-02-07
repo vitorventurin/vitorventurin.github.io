@@ -1,8 +1,6 @@
 // Styling for the navbar
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  @include heading-font;
+  @include body-font;
   .navbar-brand {
     color: $white;
   }
@@ -53,12 +51,12 @@
       &:focus,
       &:hover {
         color: $white;
-        background: $primary;
+        background: $textSecondary;
       }
     }
   }
   #mainNav.navbar-shrink {
-    padding-top: 0.5rem;
+    padding-top: 2.5rem;
     padding-bottom: 0.5rem;
     .navbar-brand {
       font-size: 1.5em;

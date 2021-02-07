@@ -29,7 +29,7 @@ a {
 }
 
 .text-secondary {
-  color: $secondary !important;
+  color: $textSecondary !important;
 }
 
 .btn-primary {
@@ -53,3 +53,4 @@ a {
     border-color: darken($secondary, 10%);
   }
 }
+
