@@ -163,7 +163,7 @@
           <div class="col-lg-4 mr-auto">
             <img class="img-fluid img-thumbnail" src="img/haze.jpg"/>
             <blockquote class="blockquote text-center text-white">
-              <p class="mb-0">(my hardware)</p>
+              <p class="mb-0 small">family grows</p>
             </blockquote>
           </div>
         </div>
@@ -189,23 +189,32 @@
     </section>
 
   <!-- Contact Section -->
-    <!-- <section id="contact">
+    <section id="contact">
       <div class="container">
-        <h2 class="text-center">Articles</h2>
+        <h2 class="text-center">Try your luck!</h2>
         <hr class="mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h3>Google Places API with Reactive Swift and Moya</h3>
-            <p>The objective of this tutorial is not explaining all the details of how the reactive paradigm works. Instead, I've made a personal list with some features that I find the coolest ones:</p>
-            <p><button class="btn btn-lg btn-primary rounded-pill">Read me</button></p>
-			      <hr class="mb-5">
-            <h3>Measuring Soundcloud on Google Analytics:</h3>
-            <p>Use Universal Analytics to track your SoundCloud page. Want deeper analytics for your SoundCloud page? Take a look at how to integrate Google Analytics and SoundCloud for more insightful analytics, like learning which songs are the most interrupted:</p>
-            <p><a class="btn btn-lg btn-primary rounded-pill" href="https://www.linkedin.com/today/post/article/measuring-soundcloud-google-analytics-vitor-venturin" target="_blank">Read me</a></p>
+            <div id="stage-parent">
+              <h3 style="text-align: center;">Wheel of Fortune</h2>
+              <p style="text-align: center;">Swipe to spin!</p>
+              <div id="game">
+                <canvas id="canvas1"></canvas>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <span class="close">XXX</span>
+                <img class="modal-content" id="img01">
+                <div id="caption">Acrobat</div>
+              </div>
+            </div>
+            <audio id="audio1" preload="auto">
+             <source src="audio/metronome.wav" type="audio/wav" />
+            </audio>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Footer -->
     <footer class="footer text-center">
@@ -441,6 +450,8 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/konva/konva.min.js"></script>
+    <script src="js/wheel.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
