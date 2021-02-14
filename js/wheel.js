@@ -231,70 +231,50 @@ function animate(frame) {
 	} else if(initialVelocity > 0 && !finished) {
 		var diff = (frame.timeDiff * Math.abs(angularVelocity)) / 1000;
 
-	if (diff > 0.0001){// || diff < -0.0001) {
-		if(!waspositive && diff > 0){
-			diff = -diff;
-		}
-		wheel.rotate(diff);
-	} else if (!controlled) {
-		if (shape) {
-			var text = shape
-			.getParent()
-			.findOne('Text')
-			.text();
-			var price = text.split('\n').join('');
-			//if (first) {
-			// first = false;
-			//} else
-			if (Math.abs(initialVelocity) < 2) {
-				alert("Try a faster spin");
-			} else {
-				//alert('Your reward is ' + price);// + " initialVelocity: " + initialVelocity + " waspositive: " + tobool(waspositive));
-				modal.style.display = "block";
-				modalImg.src = this.src;
-				captionText.innerHTML = this.alt;
+		if (diff > 0.0001){// || diff < -0.0001) {
+			if(!waspositive && diff > 0){
+				diff = -diff;
 			}
-		} else {
-			//console.log("SHAPE NOT FOUND");
+			wheel.rotate(diff);
+		} else if (!controlled) {
+			if (shape) {
+				var text = shape
+				.getParent()
+				.findOne('Text')
+				.text();
+				var price = text.split('\n').join('');
+				//if (first) {
+				// first = false;
+				//} else
+				if (Math.abs(initialVelocity) < 2) {
+					alert("Try a faster spin");
+				} else {
+					//alert('Your reward is ' + price);// + " initialVelocity: " + initialVelocity + " waspositive: " + tobool(waspositive));
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.alt;
+				}
+			} else {
+				//console.log("SHAPE NOT FOUND");
+			}
+			finished = true;
 		}
-		finished = true;
+	}
+
+	lastRotation = wheel.rotation();
+
+	function playSound() {
+		// Stop and rewind the sound if it already happens to be playing.
+		audio1.pause();
+		audio1.currentTime = 0;
+
+		// Play the sound.
+		audio1.play();
 	}
 }
 
-lastRotation = wheel.rotation();
-
-function playSound() {
-    // Stop and rewind the sound if it already happens to be playing.
-    audio1.pause();
-    audio1.currentTime = 0;
-
-    // Play the sound.
-    audio1.play();
-}
-
-if (shape) {
-	if (shape && (!activeWedge || shape._id !== activeWedge._id)) {
-		pointer.y(20);
-
-		new Konva.Tween({
-			node: pointer,
-			duration: 0.3,
-			y: 30,
-			easing: Konva.Easings.ElasticEaseOut,
-			onFinish: function () {
-				//play sound:
-				playSound();
-			},
-		}).play();
-
-		if (activeWedge) {
-			activeWedge.fillPriority('radial-gradient');
-		}
-		shape.fillPriority('fill');
-		activeWedge = shape;
-	}
-}
-}
+//
+// END OF ANIMATE FUNCTION()
 
 function init() {
 	stage = new Konva.Stage({
@@ -320,8 +300,8 @@ function init() {
 		fillRadialGradientStartPoint: 0,
 		fillRadialGradientStartRadius: 0,
 		fillRadialGradientEndPoint: 0,
-		fillRadialGradientEndRadius: 30,
-		fillRadialGradientColorStops: [0, 'white', 1, 'red'],
+		fillRadialGradientEndRadius: 100,
+		fillRadialGradientColorStops: [0, 'orange', 1, 'white'],
 		stroke: 'white',
 		strokeWidth: 2,
 		lineJoin: 'round',
