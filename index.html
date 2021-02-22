@@ -392,6 +392,7 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
     </div>
 
     <!-- Portfolio Modal 5 -->
+    <p id="jokeSetup"></p>
     <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
       <div class="portfolio-modal-dialog bg-white">
         <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="">
@@ -460,14 +461,16 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
     <script>
+
+      let quoteApi = "https://quotes.rest/quote/random?language=en&limit=1"
       let joke = 
-      fetch('https://official-joke-api.appspot.com/random_joke')
+      fetch(quoteApi)
       .then(response => response.json())
       .then(data => {
         const setup = data.setup;
         const punchLine = data.punchline;
-        // $('#jokeSetup').text(setup);
-        // $('#jokePunchline').text(punchLine);
+        $('#jokeSetup').text(setup);
+        $('#jokePunchline').text(punchLine);
         console.log(setup + '\n' + punchLine)
       });
     </script>
@@ -475,3 +478,23 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
   </body>
 
 </html>
+
+/*
+
+"success": "string",
+  "contents": {
+    "quotes": [
+      {
+        "author": "string",
+        "quote": "string",
+        "tags": [
+          "string"
+        ],
+        "id": "string",
+        "image": "string",
+        "length": 0
+      }
+    ]
+  }
+
+  */
