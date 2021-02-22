@@ -33,10 +33,6 @@
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.css" rel="stylesheet">
-
-    <!-- Wheel template -->
-    <link href="css/estilo1.css" rel="stylesheet">
-
   </head>
 
   <body id="page-top">
@@ -59,9 +55,6 @@
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Fortune</a>
             </li>
           </ul>
         </div>
@@ -454,8 +447,6 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/konva/konva.min.js"></script>
-    <script src="js/wheel.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -464,6 +455,19 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
     <script>
+      function get_quote_of_the_day() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Access the result here
+            alert(this.responseText);
+        }
+          };
+          xhttp.open("GET", "https://quotes.rest/qod?category=inspire", true);
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.setRequestHeader("X-Theysaidso-Api-Secret", "YOUR API HERE");
+          xhttp.send();
+      }
 
       let quoteApi = "https://quotes.rest/quote/random?language=en&limit=1"
       let joke = 
