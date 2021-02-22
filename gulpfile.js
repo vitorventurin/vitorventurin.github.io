@@ -8,7 +8,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
-const konva = require("konva");
+// const konva = require("konva");
 const pkg = require('./package.json');
 
 // Set the banner content
@@ -38,10 +38,10 @@ gulp.task('vendor', function(cb) {
     .pipe(gulp.dest('./vendor'))
 
   // Konva
-  gulp.src([
-    './node_modules/konva/konva.min.js'
-  ])
-  .pipe(gulp.dest('./vendor/konva'))
+  // gulp.src([
+  //   './node_modules/konva/konva.min.js'
+  // ])
+  // .pipe(gulp.dest('./vendor/konva'))
 
 
   // jQuery
