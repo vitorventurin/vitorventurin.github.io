@@ -467,6 +467,7 @@ Bright Stamps is the best way for customers to participate in a digital loyalty 
       fetch(quoteApi)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         const setup = data.setup;
         const punchLine = data.punchline;
         $('#jokeSetup').text(setup);
