@@ -73,7 +73,7 @@
 // Parallax
   const parallax1 = document.getElementsByClassName('parallax1');
 new simpleParallax(parallax1, {
-    scale: 1.0,
+    scale: 0.95,
     delay: 0.5,
 });
 
