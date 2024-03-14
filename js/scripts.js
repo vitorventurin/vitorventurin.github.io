@@ -73,13 +73,13 @@
 // Parallax
   const parallax1 = document.getElementsByClassName('parallax1');
 new simpleParallax(parallax1, {
-    scale: 0.8,
+    scale: 1.0,
     delay: 0.5,
 });
 
 const parallax2 = document.getElementsByClassName('parallax2');
 new simpleParallax(parallax2, {
-    scale: 0.9,
+    scale: 1.0,
     delay: 1,
 });
 
