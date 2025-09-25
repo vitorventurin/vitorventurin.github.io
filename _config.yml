@@ -2,10 +2,10 @@
 title: Vitor Venturin
 email: vitorventurin@gmail.com
 url: https://vitorventurin.github.io
-description: "Vitor Venturin - iOS Engineer Portfolio. Over 10 years of experience in software engineering with expertise in Swift and mobile development."
-keywords: "Vitor Venturin, iOS, Apple, Developer, Programmer, Netherlands, Brasil, Holland, Italy, Europe, freelancer, zzp, Amsterdam, Haze studio, Vitor Linhalis, kvk"
+description: "iOS Engineer with 10+ years of experience in Swift and mobile development. Based in Amsterdam, Netherlands. Available for freelance projects and full-time opportunities."
+keywords: "Vitor Venturin, iOS Engineer, Swift Developer, Mobile App Development, Netherlands, Amsterdam, iOS Developer, Apple, iPhone, iPad, freelancer, zzp, contractor"
 skills: "iOS Engineer - Swift Developer - Mobile App Development"
-meta_author: Venturin Vitor
+meta_author: Vitor Venturin
 
 # Google webmaster tools
 google_verify: G-HTBS0Y2TEF
@@ -33,7 +33,7 @@ color:
 # Footer settings
 footer:
   copyright: Vitor Venturin
-  location: Netherlands
+  location: Last Seen
   social: Links
   credits: Credits
 
@@ -48,7 +48,7 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: Amsterdam
+  - line: 📍 Amsterdam
   - line: Netherlands
 
 # Credits content

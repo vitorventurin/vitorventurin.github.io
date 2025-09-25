@@ -7,5 +7,14 @@ alt: Sonora
 project-date: 2021
 client: Personal Project
 category: Game Development
+icon: fas fa-gamepad
+video: https://www.youtube.com/embed/i3T1_AwIrZg
+links:
+  - title: iPhone
+    url: https://apps.apple.com/no/app/sonora-by-vitor-venturin/id1594428681
+    icon: fa-brands fa-apple
+  - title: Android
+    url: https://play.google.com/store/apps/details?id=io.github.vitorventurin.sonora&gl=NL
+    icon: fa-brands fa-android
 description: "Sonora is an app targeted to foley artists, where they can create layers of sounds, by typing words. For example, you can mix 'tropical rain' + 'helicopter flying' + 'battlefield', and move the sound objects around your phone screen, manipulating their volume and panning. Skills: Godot framework, gdscript, free audio APIs."
 ---

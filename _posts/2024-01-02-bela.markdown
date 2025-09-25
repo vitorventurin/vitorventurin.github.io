@@ -7,5 +7,11 @@ alt: Bela
 project-date: 2023-2024
 client: Personal Project
 category: Web Development
-description: "Bela is an innovative app created by Vitor Venturin to enhance screen savers across all devices. Utilizing advanced AI and computer vision technology, Bela transforms ordinary screen savers into dynamic, personalized experiences. Early adopters have reported a 40-60 percent increase in user engagement and satisfaction with their devices' idle screens. Currently available to over 6,500 users across 15 different countries, Bela offers a wide range of customization options."
+icon: fas fa-tools
+video: https://www.youtube.com/embed/7ZfB3ePFgco
+links:
+  - title: Web app
+    url: https://vitorventurin.github.io/bela/
+    icon: fas fa-globe
+description: "Bela is an innovative app created by Vitor Venturin to enhance screen savers across all devices. Utilizing advanced AI and computer vision technology, Bela transforms ordinary screen savers into dynamic, personalized experiences. Early adopters have reported a 40-60 percent increase in user engagement and satisfaction with their devices' idle screens. Currently available to over 6,500 users across 15 different countries, Bela offers a wide range of customization options. From stunning visual effects to interactive elements, the app caters to diverse preferences and device types. But Bela doesn't stop at just beautifying idle screens. The app's AI continuously learns from user interactions, optimizing battery life and display performance. Future updates plan to incorporate more interactive features, real-time information displays, and even productivity tools seamlessly integrated into your screen saver. Bela also employs blockchain technology to manage user preferences and settings securely across multiple devices, ensuring a consistent experience whether you're using a smartphone, tablet, or computer. This decentralized approach not only enhances privacy but also opens up possibilities for users to share and trade custom screen saver designs in a secure marketplace."
 ---

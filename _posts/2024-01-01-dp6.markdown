@@ -7,5 +7,11 @@ alt: dp6
 project-date: 2013-2014
 client: dp6
 category: Analytics Integration
-description: "DP6 is a data intelligence consultancy that offers solutions for companies, generating insights focused on performance marketing. They have a strong internal culture of collaboration and knowledge exchange that has put them on the Great Place to Work list of the best companies to work for, since 2012. At dp6, I implemented Google Analytics' scripts for several websites and apps. At that time, I also wrote one article about Soundcloud + GA integration. Skills: Javascript, Objective-C, Java."
+icon: fas fa-tools
+video: https://www.youtube.com/embed/VPbuUmIIubE
+links:
+  - title: Website
+    url: https://dp6.com.br
+    icon: fas fa-globe
+description: "DP6 is a data intelligence consultancy that offers solutions for companies, generating insights focused on performance marketing. They have a strong internal culture of collaboration and knowledge exchange that has put them on the Great Place to Work list of the best companies to work for, since 2012. At dp6, I implemented Google Analytics' scripts for several websites and apps. At that time, I also wrote one article about Soundcloud + GA integration, that you can find at my CV. Skills: Javascript, Objective-C, Java."
 ---

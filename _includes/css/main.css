@@ -76,6 +76,18 @@ hr.star-primary:after {
     background-color: #fff;
 }
 
+hr.star-mobile:after {
+    content: "\f3cd";
+}
+
+hr.star-coffee:after {
+    content: "\f7b6";
+}
+
+hr.star-laptop:after {
+    content: "\f5fc";
+}
+
 .img-centered {
     margin: 0 auto;
 }

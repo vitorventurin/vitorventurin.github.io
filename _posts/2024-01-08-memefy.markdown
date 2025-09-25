@@ -7,5 +7,11 @@ alt: Memefy
 project-date: 2015-2018
 client: Personal Project
 category: iOS Development
+icon: fas fa-smile
+extra-img: assets/img/portfolio/memefy2.png
+links:
+  - title: AppStore
+    url: https://apps.apple.com/en/app/memefy/id1015251873
+    icon: fa-brands fa-apple
 description: "I built this app from scratch, using UIKit, UIStackViews, customizing components, manipulation of uiview layers and stack data-structures. My sister was responsible for UX, UI and illustrations. With Memefy, you can decorate photos with funny stickers (100% original) and create memes. Skills: Swift, Analytics, SDWebImage, Firebase (Database, Auth, Messaging, Storage), Crashlytics, Unit tests, etc."
 ---

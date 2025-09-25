@@ -7,5 +7,15 @@ alt: Sopa
 project-date: 2018-2019
 client: Personal Project
 category: iOS Development
+icon: fas fa-fire
+extra-img: assets/img/portfolio/sopa2.png
+video: https://www.youtube.com/embed/V51xxtmKGME
+links:
+  - title: Web App
+    url: https://sopa-development.web.app/
+    icon: fas fa-list-alt
+  - title: AppStore
+    url: https://apps.apple.com/en/app/sopa/id1447296370
+    icon: fa-brands fa-apple
 description: "Catalog of recipes in portuguese, with audio transcription and step-by-step of cooking process, using a carousel of images. Skills: Swift, Google Firebase SDK, Algolia SDK, Kingfisher, Reachability, MVVM, UserDefaults, AVFoundation, Unit tests and more. I also made a web-app version, using ReactJS."
 ---

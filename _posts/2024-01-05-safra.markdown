@@ -7,5 +7,12 @@ alt: Safra Bank
 project-date: 2014-2015
 client: Safra Bank
 category: Banking iOS
+icon: fas fa-piggy-bank
+extra-img: assets/img/portfolio/safra2.png
+video: https://www.youtube.com/embed/QKiN8FDr7c0
+links:
+  - title: AppStore link
+    url: https://apps.apple.com/br/app/safra/id422705275
+    icon: fa-brands fa-apple
 description: "For Safra bank, we built a very detailed prototype with the main features and screens (invoice, investment graphics, card billing, chat, payment log, shortcuts, etc). Language: Objective-C. We were also responsible for interviewing the users, showing them the prototype and having instant feedback about the app (what they like, dislike and what could be improved for the next version)."
 ---

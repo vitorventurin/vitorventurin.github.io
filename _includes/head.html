@@ -11,7 +11,13 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>
-    {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+    {% if page.url == "/" %}
+      {{ site.title }} - iOS Engineer Portfolio
+    {% elsif page.title %}
+      {{ page.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
   </title>
   <meta name="viewport" content="width=device-width" />
   <meta name="description" content="{{ site.description }}" />
@@ -21,14 +27,41 @@
   {% endif %}
 
   <!-- Essential META Tags -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{{ site.url }}/assets/img/memojitiv.png">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:description" content="{{ site.description }}">
-  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:site_name" content="{{ site.title }}'s Portfolio">
   <meta name="twitter:site" content="@vitorventurin">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ site.url }}/assets/img/memojitiv.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.title }}",
+    "jobTitle": "iOS Engineer",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}",
+    "image": "{{ site.url }}/assets/img/memojitiv.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/vitorventurin/",
+      "https://github.com/vitorventurin",
+      "https://www.youtube.com/@vitorventurin"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Amsterdam",
+      "addressCountry": "Netherlands"
+    },
+    "knowsAbout": ["iOS Development", "Swift", "Mobile App Development", "ARKit", "Firebase", "UIKit"]
+  }
+  </script>
   <link
     rel="canonical"
     href="{{ page.url | replace:'index.html','' | prepend: site.url }}"
@@ -53,9 +86,8 @@
   <meta name="msvalidate.01" content="{{ site.bing_verify }}" />
   {% endif %}
 
-  <!-- Custom Fonts -->
-  <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css"
-  |prepend: site.url }}">
+  <!-- Font Awesome icons (free version)-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" type="text/css" />
   <link
     href="//fonts.googleapis.com/css?family=Montserrat:400,700"
     rel="stylesheet"

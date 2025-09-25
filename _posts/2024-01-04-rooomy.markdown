@@ -7,5 +7,12 @@ alt: Rooomy
 project-date: 2018-2019
 client: Sotheby's International Realty
 category: AR Development
-description: "Design your future home and shop for home furnishings through an immersive Augmented Reality experience with Curate by Sotheby's International Realty(sm) brand powered by roOomy. Built as a visualization tool for homebuyers, renters and real estate agents, Curate by Sotheby's International Realty uses roOomy's state-of-the-art technology to let you see how furniture and décor will look, feel, and fit as you envision your home. We built this app from scratch, with a small team of developers. Skills: VIPER architecture, ARKit, CI / CD, code reviewing, unit testing, universal app (iPhone and iPad supported), ReplayKit, CoreData and more."
+icon: fas fa-home
+extra-img: assets/img/portfolio/sir2.png
+video: https://www.youtube.com/embed/0X7zQd9oNws
+links:
+  - title: AppStore link
+    url: https://apps.apple.com/us/app/curate-by-sir-real-estate-ar/id1386263226
+    icon: fa-brands fa-apple
+description: "Design your future home and shop for home furnishings through an immersive Augmented Reality experience with Curate by Sotheby's International Realty(sm) brand powered by roOomy. Built as a visualization tool for homebuyers, renters and real estate agents, Curate by Sotheby's International Realty uses roOomy's state-of-the-art technology to let you see how furniture and décor will look, feel, and fit as you envision your home. Interact with the products you love – tap to purchase them on retailers' websites. We built this app from scratch, with a small team of developers. Skills: VIPER architecture, ARKit, CI / CD, code reviewing, unit testing, universal app (iPhone and iPad supported), ReplayKit, CoreData and more."
 ---
