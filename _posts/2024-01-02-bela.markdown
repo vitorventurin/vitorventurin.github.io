@@ -7,5 +7,5 @@ alt: Bela
 project-date: 2023-2024
 client: Personal Project
 category: Web Development
-description: Bela is an innovative app created by Vitor Venturin to enhance screen savers across all devices. Utilizing advanced AI and computer vision technology, Bela transforms ordinary screen savers into dynamic, personalized experiences. Early adopters have reported a 40-60 percent increase in user engagement and satisfaction with their devices' idle screens. Currently available to over 6,500 users across 15 different countries, Bela offers a wide range of customization options.
+description: "Bela is an innovative app created by Vitor Venturin to enhance screen savers across all devices. Utilizing advanced AI and computer vision technology, Bela transforms ordinary screen savers into dynamic, personalized experiences. Early adopters have reported a 40-60 percent increase in user engagement and satisfaction with their devices' idle screens. Currently available to over 6,500 users across 15 different countries, Bela offers a wide range of customization options."
 ---

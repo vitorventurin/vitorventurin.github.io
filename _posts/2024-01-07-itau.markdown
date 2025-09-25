@@ -7,5 +7,5 @@ alt: Itaú Bank
 project-date: 2014-2016
 client: Itaú Bank
 category: Banking iOS
-description: For Itaú bank, we created the app from scratch and I was responsible for creating UI components (custom alerts, virtual keyboard, buttons, styles, menu) and screens (billing, transfers, chat, payments, favorite shortcuts). Language used: Objective-C. This is one of my favorite works and it has opened many opportunities to me. The app is rated 4.7 on App Store Brazil and it has more than 1,3 million evaluations.
+description: "For Itaú bank, we created the app from scratch and I was responsible for creating UI components (custom alerts, virtual keyboard, buttons, styles, menu) and screens (billing, transfers, chat, payments, favorite shortcuts). Language used: Objective-C. This is one of my favorite works and it has opened many opportunities to me. The app is rated 4.7 on App Store Brazil and it has more than 1,3 million evaluations."
 ---

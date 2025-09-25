@@ -7,5 +7,5 @@ alt: Sopa
 project-date: 2018-2019
 client: Personal Project
 category: iOS Development
-description: Catalog of recipes in portuguese, with audio transcription and step-by-step of cooking process, using a carousel of images. Skills: Swift, Google Firebase SDK, Algolia SDK, Kingfisher, Reachability, MVVM, UserDefaults, AVFoundation, Unit tests and more. I also made a web-app version, using ReactJS.
+description: "Catalog of recipes in portuguese, with audio transcription and step-by-step of cooking process, using a carousel of images. Skills: Swift, Google Firebase SDK, Algolia SDK, Kingfisher, Reachability, MVVM, UserDefaults, AVFoundation, Unit tests and more. I also made a web-app version, using ReactJS."
 ---
