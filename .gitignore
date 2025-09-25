@@ -202,7 +202,20 @@ node_modules
 # Garbage files
 .DS_Store
 
-# Ignore markdown files except README.md
-*.md
-!README.md
+# Ignore specific markdown files
+README.md
+CLAUDE.md
+UPGRADE_DOCUMENTATION.md
 .claude/
+
+# Jekyll
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock
+
+# Theme files (temporary)
+freelancer-theme-gh-pages/
+freelancer-theme.zip

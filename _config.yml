@@ -1,0 +1,84 @@
+# Site settings
+title: Vitor Venturin
+email: vitorventurin@gmail.com
+url: https://vitorventurin.github.io
+description: "Vitor Venturin - iOS Engineer Portfolio. Over 10 years of experience in software engineering with expertise in Swift and mobile development."
+keywords: "Vitor Venturin, iOS, Apple, Developer, Programmer, Netherlands, Brasil, Holland, Italy, Europe, freelancer, zzp, Amsterdam, Haze studio, Vitor Linhalis, kvk"
+skills: "iOS Engineer - Swift Developer - Mobile App Development"
+meta_author: Venturin Vitor
+
+# Google webmaster tools
+google_verify: G-HTBS0Y2TEF
+
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Contact form:
+# - static : pass through formspree.io to validate email sending
+# - disqus : replace contact form by disqus thread
+# - comment the line below if you want to stick with the default PHP contact form
+contact: static
+
+# If you use disqus you need disqus shortname
+# https://help.disqus.com/customer/portal/articles/466208
+disqus_shortname:
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: FF4500 # Orange color from your current site
+  primary-rgb: "255,69,0"
+  secondary: 2c3e50
+  secondary-dark: 233140
+
+# Footer settings
+footer:
+  copyright: Vitor Venturin
+  location: Netherlands
+  social: Links
+  credits: Credits
+
+# Social networks usernames
+social:
+  - title: youtube
+    url: https://www.youtube.com/@vitorventurin
+  - title: linkedin
+    url: https://www.linkedin.com/in/vitorventurin/
+  - title: github
+    url: https://github.com/vitorventurin
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: Amsterdam
+  - line: Netherlands
+
+# Credits content
+credits: 'Built with Jekyll using the Freelancer theme.'
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+#for posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: ""
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - CLAUDE.md
+  - UPGRADE_DOCUMENTATION.md

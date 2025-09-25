@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 10
+date: 2024-01-10
+img: sonora.png
+alt: Sonora
+project-date: 2021
+client: Personal Project
+category: Game Development
+description: Sonora is an app targeted to foley artists, where they can create layers of sounds, by typing words. For example, you can mix "tropical rain" + "helicopter flying" + "battlefield", and move the sound objects around your phone screen, manipulating their volume and panning. Skills: Godot framework, gdscript, free audio APIs.
+---

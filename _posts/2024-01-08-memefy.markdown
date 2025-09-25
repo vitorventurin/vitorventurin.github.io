@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 8
+date: 2024-01-08
+img: memefy.png
+alt: Memefy
+project-date: 2015-2018
+client: Personal Project
+category: iOS Development
+description: I built this app from scratch, using UIKit, UIStackViews, customizing components, manipulation of uiview layers and stack data-structures. My sister was responsible for UX, UI and illustrations. With Memefy, you can decorate photos with funny stickers (100% original) and create memes. Skills: Swift, Analytics, SDWebImage, Firebase (Database, Auth, Messaging, Storage), Crashlytics, Unit tests, etc.
+---
