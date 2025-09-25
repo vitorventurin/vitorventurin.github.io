@@ -92,13 +92,8 @@ hr.star-laptop:after {
     margin: 0 auto;
 }
 
-.profile-pic {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
+img {
+    border-radius: 5px;
 }
 
 .divider-custom {
