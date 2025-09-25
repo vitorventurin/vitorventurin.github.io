@@ -25,10 +25,10 @@ disqus_shortname:
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: FF4500 # Orange color from your current site
-  primary-rgb: "255,69,0"
-  secondary: 2c3e50
-  secondary-dark: 233140
+  primary: 2c2c2c # Dark grey for backgrounds (header/picture)
+  primary-rgb: "44,44,44"
+  secondary: 2c3e50 # Dark blue for text/links
+  secondary-dark: 1a252f
 
 # Footer settings
 footer:
