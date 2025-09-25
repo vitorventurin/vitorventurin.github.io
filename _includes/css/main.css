@@ -101,6 +101,29 @@ hr.star-laptop:after {
     display: block;
 }
 
+.divider-custom {
+    margin: 25px auto 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.divider-custom-line {
+    width: 100%;
+    height: 5px;
+    background-color: #{{ site.color.secondary }};
+    display: inline-block;
+    max-width: 120px;
+}
+
+.divider-custom-icon {
+    display: inline-block;
+    position: relative;
+    padding: 0 25px;
+    font-size: 2em;
+    color: #{{ site.color.secondary }};
+    background-color: #fff;
+}
+
 header {
     text-align: center;
     color: #fff;
