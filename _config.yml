@@ -9,6 +9,7 @@ meta_author: Vitor Venturin
 
 # Google webmaster tools
 google_verify: G-HTBS0Y2TEF
+google_analytics: "G-HTBS0Y2TEF" # replace with your actual Google Analytics Measurement ID
 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
