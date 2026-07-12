@@ -10,6 +10,9 @@ client: Personal Project
 category: iOS & Android
 icon: fas fa-music
 links:
+  - title: AppStore link
+    url: https://apps.apple.com/us/app/mojo-player/id6774632879
+    icon: fa-brands fa-apple
   - title: Google Play
     url: https://play.google.com/store/apps/details?id=io.github.vitorventurin.musicalibre_android
     icon: fa-brands fa-google-play
