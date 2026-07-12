@@ -291,6 +291,13 @@ section.success {
     }
 }
 
+@media(min-width:576px) and (max-width:991px) {
+    #portfolio .portfolio-item {
+        width: 50%;
+        float: left;
+    }
+}
+
 .btn-outline {
     margin-top: 15px;
     border: solid 2px #fff;
