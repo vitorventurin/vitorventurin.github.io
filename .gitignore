@@ -219,3 +219,6 @@ Gemfile.lock
 # Theme files (temporary)
 freelancer-theme-gh-pages/
 freelancer-theme.zip
+
+# Recovered React source for bela/ (kept locally, not tracked in this static-site repo)
+bela-src/
