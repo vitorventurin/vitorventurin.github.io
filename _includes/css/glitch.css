@@ -1,0 +1,501 @@
+/*
+ * Glitch / circuit monochrome theme
+ * Layered on top of main.css. Created by Vitor Venturin.
+ */
+
+:root {
+    --ink: #0d0d0d;
+    --paper: #f3f3f1;
+    --dark: #141414;
+    --darker: #0a0a0a;
+    --muted: #9a9a9a;
+    --line: #2e2e2e;
+    /* Offset layers used by the glitch effect. Swap for e.g. #0ff / #f03 for a chromatic version. */
+    --glitch-a: rgba(255, 255, 255, .75);
+    --glitch-b: rgba(120, 120, 120, .9);
+    --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.4 -.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grunge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3 1.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+body {
+    font-family: var(--mono);
+    color: var(--ink);
+    background: var(--paper);
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+img {
+    border-radius: 2px;
+}
+
+/* Film-grain overlay across the whole page */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    pointer-events: none;
+    background-image: var(--noise);
+    opacity: .07;
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar-default {
+    background-color: rgba(10, 10, 10, .92);
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    font-family: var(--mono);
+    letter-spacing: 1px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: var(--muted);
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-size: 13px;
+}
+
+.navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: transparent !important;
+    box-shadow: inset 0 -2px 0 #fff;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: var(--line);
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #222;
+}
+
+/* ---------- Circuit dividers (replace the star <hr>) ---------- */
+
+hr.star-light,
+hr.star-primary {
+    height: 24px;
+    max-width: 260px;
+    margin: 18px auto 40px;
+    border: 0;
+    -webkit-mask: url("assets/img/circuit-divider.svg") center / contain no-repeat;
+    mask: url("assets/img/circuit-divider.svg") center / contain no-repeat;
+}
+
+hr.star-light { background-color: #fff; }
+hr.star-primary { background-color: var(--ink); }
+
+hr.star-light:after,
+hr.star-primary:after {
+    content: none;
+}
+
+.divider-custom-line { background-color: var(--ink); height: 2px; }
+.divider-custom-icon { color: var(--ink); background-color: transparent; }
+
+/* ---------- Textured dark sections ---------- */
+
+header,
+section.success,
+#portfolio {
+    position: relative;
+    overflow: hidden;
+}
+
+header,
+section.success {
+    background-color: var(--dark);
+    background-image: var(--grunge);
+    background-attachment: fixed;
+}
+
+/* Circuit traces growing in from the edges */
+header::before,
+section.success::before,
+#portfolio::before,
+#portfolio::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+header::before {
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .22);
+    -webkit-mask: url("assets/img/circuit-edge.svg") right top / 420px auto no-repeat;
+    mask: url("assets/img/circuit-edge.svg") right top / 420px auto no-repeat;
+}
+
+section.success::before {
+    left: 0;
+    bottom: 0;
+    width: 420px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .14);
+    transform: scaleX(-1);
+    -webkit-mask: url("assets/img/circuit-edge.svg") right bottom / 420px auto no-repeat;
+    mask: url("assets/img/circuit-edge.svg") right bottom / 420px auto no-repeat;
+}
+
+#portfolio {
+    background-color: var(--paper);
+}
+
+#portfolio::before {
+    left: 0;
+    top: 30%;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, .28);
+    transform: scaleX(-1);
+    -webkit-mask: url("assets/img/circuit-edge.svg") right center / 300px auto no-repeat;
+    mask: url("assets/img/circuit-edge.svg") right center / 300px auto no-repeat;
+}
+
+#portfolio::after {
+    right: 0;
+    bottom: 0;
+    width: 480px;
+    height: 260px;
+    background-color: rgba(0, 0, 0, .3);
+    -webkit-mask: url("assets/img/circuit-bottom.svg") right bottom / 480px auto no-repeat;
+    mask: url("assets/img/circuit-bottom.svg") right bottom / 480px auto no-repeat;
+}
+
+header .container,
+section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Header ---------- */
+
+header .container {
+    padding-top: 140px;
+    padding-bottom: 80px;
+}
+
+.profile-frame {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 28px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.profile-frame::before,
+.profile-frame::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #fff;
+}
+
+.profile-frame::before { top: -4px; left: -4px; border-right: 0; border-bottom: 0; }
+.profile-frame::after { bottom: -4px; right: -4px; border-left: 0; border-top: 0; }
+
+header img.profile-pic {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 0;
+    filter: grayscale(1) contrast(1.25);
+    transition: filter .4s;
+}
+
+header .profile-frame:hover img.profile-pic {
+    filter: none;
+    animation: jitter .35s steps(2) 2;
+}
+
+header .intro-text .name {
+    letter-spacing: 2px;
+}
+
+header .intro-text .skills {
+    font-family: var(--mono);
+    font-size: 1em;
+    color: #cfcfcf;
+}
+
+header .intro-text .skills::before {
+    content: "> ";
+    color: var(--muted);
+}
+
+header .intro-text .skills::after {
+    content: "_";
+    animation: blink 1s steps(1) infinite;
+}
+
+@media (min-width: 768px) {
+    header .container {
+        padding-top: 180px;
+        padding-bottom: 110px;
+    }
+
+    header .intro-text .name {
+        font-size: 4.25em;
+    }
+
+    header .intro-text .skills {
+        font-size: 1.25em;
+    }
+}
+
+/* ---------- Glitch text ---------- */
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    animation: glitch-skew 5s infinite linear;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    clip-path: inset(100% 0 0 0);
+}
+
+.glitch::before {
+    color: var(--glitch-a);
+    animation: glitch-a 5s infinite steps(1);
+}
+
+.glitch::after {
+    color: var(--glitch-b);
+    animation: glitch-b 5s infinite steps(1);
+}
+
+#portfolio .glitch {
+    --glitch-a: rgba(0, 0, 0, .55);
+    --glitch-b: rgba(0, 0, 0, .3);
+}
+
+@keyframes glitch-a {
+    0%, 80%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+    81% { clip-path: inset(10% 0 70% 0); transform: translate(-4px, -1px); }
+    83% { clip-path: inset(55% 0 25% 0); transform: translate(5px, 1px); }
+    85% { clip-path: inset(80% 0 5% 0); transform: translate(-3px, 0); }
+    87% { clip-path: inset(30% 0 50% 0); transform: translate(3px, -1px); }
+    89% { clip-path: inset(100% 0 0 0); }
+}
+
+@keyframes glitch-b {
+    0%, 80%, 100% { clip-path: inset(100% 0 0 0); transform: none; }
+    82% { clip-path: inset(65% 0 15% 0); transform: translate(4px, 1px); }
+    84% { clip-path: inset(5% 0 80% 0); transform: translate(-5px, 0); }
+    86% { clip-path: inset(40% 0 40% 0); transform: translate(3px, 1px); }
+    88% { clip-path: inset(100% 0 0 0); }
+}
+
+@keyframes glitch-skew {
+    0%, 80%, 90%, 100% { transform: none; }
+    82% { transform: skewX(-6deg); }
+    84% { transform: skewX(4deg) translateX(2px); }
+    86% { transform: skewX(0) translateX(-2px); }
+}
+
+@keyframes jitter {
+    0% { transform: translate(-3px, 1px); }
+    50% { transform: translate(3px, -1px); }
+    100% { transform: none; }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ---------- Portfolio grid ---------- */
+
+#portfolio .portfolio-item .portfolio-link {
+    overflow: hidden;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    background: var(--ink);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .15);
+    transition: box-shadow .2s, transform .2s;
+}
+
+#portfolio .portfolio-item .portfolio-link img {
+    border-radius: 0;
+    filter: grayscale(1) contrast(1.1);
+    transition: filter .4s;
+}
+
+#portfolio .portfolio-item .portfolio-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+#portfolio .portfolio-item .portfolio-link:hover img {
+    filter: none;
+    animation: jitter .3s steps(2) 1;
+}
+
+#portfolio .portfolio-item .portfolio-link .caption {
+    z-index: 3;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, .06) 0 1px, transparent 1px 3px),
+        rgba(10, 10, 10, .72);
+}
+
+/* ---------- About ---------- */
+
+section.success h4 {
+    margin-top: 24px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+section.success h4::before {
+    content: "// ";
+    color: var(--muted);
+    font-family: var(--mono);
+}
+
+section.success p {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+/* ---------- Footer ---------- */
+
+footer .footer-above {
+    background-color: var(--darker);
+    border-top: 1px dashed var(--line);
+}
+
+footer .footer-below {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    border-top: 1px solid #1c1c1c;
+}
+
+footer h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+.btn-social,
+footer a.btn-social {
+    color: #fff;
+    border-width: 1px;
+    transition: background .2s, color .2s;
+}
+
+footer a.btn-social:hover,
+footer a.btn-social:focus {
+    color: var(--ink);
+    background: #fff;
+}
+
+/* ---------- Modals ---------- */
+
+.portfolio-modal .modal-content {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.portfolio-modal .modal-content p {
+    font-size: 15px;
+}
+
+.portfolio-modal .modal-content img {
+    border: 1px solid var(--ink);
+}
+
+.portfolio-modal .close-modal .lr,
+.portfolio-modal .close-modal .lr .rl {
+    width: 2px;
+    background-color: var(--ink);
+}
+
+.portfolio-modal a {
+    color: var(--ink);
+    text-decoration: underline;
+}
+
+.btn-default {
+    font-family: var(--mono);
+    border-radius: 0;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    background: transparent;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+    color: #fff;
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
+.scroll-top .btn {
+    border-radius: 0;
+    background: var(--ink);
+    border: 1px solid #fff;
+}
+
+/* ---------- Motion / small screens ---------- */
+
+@media (max-width: 767px) {
+    header::before,
+    section.success::before,
+    #portfolio::before,
+    #portfolio::after {
+        opacity: .5;
+    }
+
+    header,
+    section.success {
+        background-attachment: scroll;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glitch,
+    .glitch::before,
+    .glitch::after,
+    header .intro-text .skills::after {
+        animation: none;
+    }
+
+    header .profile-frame:hover img.profile-pic,
+    #portfolio .portfolio-item .portfolio-link:hover img {
+        animation: none;
+    }
+}
