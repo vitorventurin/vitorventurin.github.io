@@ -43,6 +43,11 @@
                                 <p>{{ post.description }}</p>
                             {% endif %}
 
+                            {% assign details = post.content | strip %}
+                            {% if details != "" %}
+                            <div class="project-details">{{ post.content }}</div>
+                            {% endif %}
+
                             {% if post.links %}
                             <div class="portfolio-links">
                                 {% for link in post.links %}

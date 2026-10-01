@@ -438,6 +438,54 @@ footer a.btn-social:focus {
     border: 1px solid var(--ink);
 }
 
+.portfolio-modal .project-details {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.portfolio-modal .project-details h3 {
+    font-family: var(--mono);
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 24px 0 8px;
+}
+
+.portfolio-modal .project-details li {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.portfolio-modal .project-screens {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0 8px;
+}
+
+.portfolio-modal .project-screens figure {
+    margin: 0;
+}
+
+.portfolio-modal .project-screens img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-modal .project-screens figcaption {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 6px;
+}
+
+@media (max-width: 767px) {
+    .portfolio-modal .project-screens {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .portfolio-modal .close-modal .lr,
 .portfolio-modal .close-modal .lr .rl {
     width: 2px;
