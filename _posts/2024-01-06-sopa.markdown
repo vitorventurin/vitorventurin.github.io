@@ -4,7 +4,7 @@ modal-id: 6
 date: 2024-01-06
 img: sopa.png
 alt: Sopa
-project-date: 2018-2019
+project-date: 2018-2026
 client: Personal Project
 category: iOS Development
 icon: fas fa-fire
@@ -17,5 +17,24 @@ links:
   - title: AppStore
     url: https://apps.apple.com/en/app/sopa/id1447296370
     icon: fa-brands fa-apple
-description: "Catalog of recipes in portuguese, with audio transcription and step-by-step of cooking process, using a carousel of images. Skills: Swift, Google Firebase SDK, Algolia SDK, Kingfisher, Reachability, MVVM, UserDefaults, AVFoundation, Unit tests and more. I also made a web-app version, using ReactJS."
+description: "Sopa is a catalog of recipes in Portuguese: browse a photo grid, search by title or ingredient, and follow each recipe step by step with a carousel of images. Recipes can be read aloud, in a Brazilian or European Portuguese voice. It started as a native iOS app and grew into Android and web versions."
 ---
+
+**Role:** Sole developer of the iOS, Android and web versions.
+
+### Highlights
+
+- Built the native iOS app in Swift with MVVM and the Coordinator pattern, using protocols for dependency injection and testability.
+- Recipes live in Firebase Firestore with offline persistence, so the app keeps working without a connection.
+- Text-to-speech narration of recipes with a choice of Brazilian or European Portuguese voice.
+- Pinterest-style photo grid, parallax header on the recipe screen, and recipe sharing.
+- Refreshed the app in 2025 (version 1.1): safer concurrency around Firestore setup, fewer third-party dependencies, updated unit tests.
+
+### Android and web
+
+- Built the Android version in React Native with TypeScript: paginated recipe list, masonry grid, debounced search over title and ingredients, light and dark mode, Jest tests.
+- Built a Progressive Web App in React: masonry grid with infinite scroll, offline support through a Workbox service worker, automatic dark mode, hosted on Firebase.
+
+### Tech
+
+Swift, UIKit, MVVM, Coordinator, AVFoundation, Kingfisher, Firebase (Firestore, Storage), React Native, TypeScript, React, Workbox, Jest

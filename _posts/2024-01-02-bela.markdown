@@ -13,5 +13,19 @@ links:
   - title: Web app
     url: https://vitorventurin.github.io/bela/
     icon: fas fa-globe
-description: "Bela is an innovative app created by Vitor Venturin to enhance screen savers across all devices. Utilizing advanced AI and computer vision technology, Bela transforms ordinary screen savers into dynamic, personalized experiences. Early adopters have reported a 40-60 percent increase in user engagement and satisfaction with their devices' idle screens. Currently available to over 6,500 users across 15 different countries, Bela offers a wide range of customization options. From stunning visual effects to interactive elements, the app caters to diverse preferences and device types. But Bela doesn't stop at just beautifying idle screens. The app's AI continuously learns from user interactions, optimizing battery life and display performance. Future updates plan to incorporate more interactive features, real-time information displays, and even productivity tools seamlessly integrated into your screen saver. Bela also employs blockchain technology to manage user preferences and settings securely across multiple devices, ensuring a consistent experience whether you're using a smartphone, tablet, or computer. This decentralized approach not only enhances privacy but also opens up possibilities for users to share and trade custom screen saver designs in a secure marketplace."
+description: "Bela is a tiny wallpaper and screensaver web app. It fills the screen with photos and scrolls through them one at a time, endlessly, turning any idle screen (TV, tablet, laptop) into a photo frame."
 ---
+
+**Role:** Sole developer.
+
+### Highlights
+
+- Single-page React app with no backend: it runs entirely in the browser and is deployed as a static site on GitHub Pages.
+- Photos auto-advance every 10 seconds and are centered on screen whatever their orientation, portrait or landscape.
+- Started with Unsplash as the photo source, then moved to the Google Photos Picker so people can use their own photos.
+- Picked photos are downloaded once and cached in IndexedDB, so the screensaver keeps working after a reload without signing in or picking again.
+- Google sign-in is handled with Google Identity Services and silent token renewal, with no server-side secret.
+
+### Tech
+
+React, JavaScript, Google Photos Picker API, Google Identity Services, IndexedDB, GitHub Pages

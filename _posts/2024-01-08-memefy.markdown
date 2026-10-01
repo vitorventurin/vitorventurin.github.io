@@ -4,7 +4,7 @@ modal-id: 8
 date: 2024-01-08
 img: memefy.png
 alt: Memefy
-project-date: 2015-2018
+project-date: 2015-2025
 client: Personal Project
 category: iOS Development
 icon: fas fa-smile
@@ -13,5 +13,28 @@ links:
   - title: AppStore
     url: https://apps.apple.com/en/app/memefy/id1015251873
     icon: fa-brands fa-apple
-description: "I built this app from scratch, using UIKit, UIStackViews, customizing components, manipulation of uiview layers and stack data-structures. My sister was responsible for UX, UI and illustrations. With Memefy, you can decorate photos with funny stickers (100% original) and create memes. Skills: Swift, Analytics, SDWebImage, Firebase (Database, Auth, Messaging, Storage), Crashlytics, Unit tests, etc."
+description: "With Memefy you decorate photos with funny, 100% original stickers and turn them into memes. I built the app from scratch, and my sister was responsible for UX, UI and illustrations."
 ---
+
+**Role:** Sole developer of the iOS and Android apps. UX, UI and illustrations by my sister.
+
+### Highlights
+
+- Built the original iOS app with UIKit: custom components, stack views, direct manipulation of view layers and a stack data structure behind the editor.
+- Meme editor based on multi-touch gestures: move, pinch to scale and rotate stickers and text, with layer ordering.
+- Backed by Firebase: Database, Auth, Messaging, Storage, Analytics and Crashlytics.
+- Started a 2025 rewrite of the iOS app in SwiftUI, moving local storage to SwiftData and adding Google sign-in.
+
+### Android
+
+- Android version with its own touch system for gesture-based editing of stickers and text.
+- Migrated the codebase from Java to Kotlin, moved the camera to CameraX and added Android 15 support (16 KB page size).
+- Stickers are served from Firestore with a local offline fallback and image caching.
+
+### Backend
+
+- Wrote a Firebase Function in Python that checks uploaded images with an NSFW filter before they are shared.
+
+### Tech
+
+Swift, UIKit, SwiftUI, SwiftData, Kingfisher, SDWebImage, Kotlin, CameraX, Firebase (Auth, Firestore, Storage, Messaging, Functions, Crashlytics), Python

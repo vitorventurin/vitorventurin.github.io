@@ -14,5 +14,16 @@ links:
   - title: AppStore link
     url: https://apps.apple.com/br/app/safra/id422705275
     icon: fa-brands fa-apple
-description: "For Safra bank, we built a very detailed prototype with the main features and screens (invoice, investment graphics, card billing, chat, payment log, shortcuts, etc). Language: Objective-C. We were also responsible for interviewing the users, showing them the prototype and having instant feedback about the app (what they like, dislike and what could be improved for the next version)."
+description: "For Safra bank, we built a very detailed prototype of the mobile banking app, covering its main features and screens, and tested it directly with users."
 ---
+
+**Role:** iOS developer on the prototype team.
+
+### Highlights
+
+- Built a detailed prototype with the main features and screens: invoice, investment charts, card billing, chat, payment log and shortcuts.
+- Interviewed users with the prototype in hand, collecting instant feedback on what they liked, disliked and wanted improved for the next version.
+
+### Tech
+
+Objective-C

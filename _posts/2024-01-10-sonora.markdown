@@ -4,7 +4,7 @@ modal-id: 10
 date: 2024-01-10
 img: sonora.png
 alt: Sonora
-project-date: 2021
+project-date: 2021-2026
 client: Personal Project
 category: Game Development
 icon: fas fa-gamepad
@@ -16,5 +16,26 @@ links:
   - title: Android
     url: https://play.google.com/store/apps/details?id=io.github.vitorventurin.sonora&gl=NL
     icon: fa-brands fa-android
-description: "Sonora is an app targeted to foley artists, where they can create layers of sounds, by typing words. For example, you can mix 'tropical rain' + 'helicopter flying' + 'battlefield', and move the sound objects around your phone screen, manipulating their volume and panning. Skills: Godot framework, gdscript, free audio APIs."
+description: "Sonora is an app for foley artists and sound explorers: type a word and it becomes a sound on your screen. Mix 'tropical rain' + 'helicopter flying' + 'battlefield', drag the sound objects around to shape volume and panning, and add effects to each one. It started as a Godot app for iOS and Android and was later rebuilt as a native Android app."
 ---
+
+**Role:** Sole developer, from concept and sound design to both store releases.
+
+### Highlights
+
+- Built the original app in Godot with GDScript and shipped it to the App Store and Google Play from one codebase.
+- Integrated the Freesound API: text search plus a "word + number" syntax that finds sounds around a given BPM (for example "Techno 120").
+- Every search result becomes a draggable sound object with its own audio bus, so each sound gets independent volume, pitch, looping and effects.
+- Covered the core (effects, sound objects, API, input) with unit tests using the GUT framework, run on GitHub Actions.
+
+### Native Android rewrite
+
+- Rebuilt the app in Kotlin and Jetpack Compose to get true multi-touch: every bubble handles its own pointer events, so several sounds can be dragged at once with different fingers, which Godot's input model did not allow cleanly.
+- Wrote the audio effects by hand as Media3 audio processors: reverb (Freeverb, with room, hall and plate presets), delay (slapback, ping-pong, tape), chorus, phaser, flanger, distortion, filter, compressor, bitcrush glitch and stutter/repeat.
+- Designed a custom rotary knob control and a color-coded effects panel in a bottom sheet.
+- Added recording of the full mix with Android's playback capture, saved as WAV and ready to share.
+- Multi-touch dragging is covered by instrumented UI tests.
+
+### Tech
+
+Godot, GDScript, GUT, Freesound API, Kotlin, Jetpack Compose, MVVM, Media3 ExoPlayer, Retrofit, OkHttp, GitHub Actions

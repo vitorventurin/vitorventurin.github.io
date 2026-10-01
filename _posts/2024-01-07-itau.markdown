@@ -13,5 +13,17 @@ links:
   - title: AppStore link
     url: https://apps.apple.com/br/app/banco-ita%C3%BA/id474505665
     icon: fa-brands fa-apple
-description: "For Itaú bank, we created the app from scratch and I was responsible for creating UI components (custom alerts, virtual keyboard, buttons, styles, menu) and screens (billing, transfers, chat, payments, favorite shortcuts). Language used: Objective-C. This is one of my favorite works and it has opened many opportunities to me. The app is rated 4.7 on App Store Brazil and it has more than 1,3 million evaluations."
+description: "For Itaú bank, we created the mobile banking app from scratch. This is one of my favorite works and it has opened many opportunities to me. The app is rated 4.7 on App Store Brazil and it has more than 1,3 million evaluations."
 ---
+
+**Role:** iOS developer, responsible for UI components and screens.
+
+### Highlights
+
+- Part of the team that created the app from scratch.
+- Built the UI components: custom alerts, virtual keyboard, buttons, styles and menu.
+- Built screens for billing, transfers, chat, payments and favorite shortcuts.
+
+### Tech
+
+Objective-C
