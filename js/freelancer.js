@@ -35,3 +35,29 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+// Browser/Android back button closes the open portfolio modal
+$(function() {
+    var closingFromHistory = false;
+
+    $('.portfolio-modal').on('show.bs.modal', function() {
+        if (!history.state || history.state.modal !== this.id) {
+            history.pushState({ modal: this.id }, '', '#' + this.id);
+        }
+    }).on('hide.bs.modal', function() {
+        // Closed via X / Close button / Esc: drop the history entry we added
+        if (!closingFromHistory && history.state && history.state.modal === this.id) {
+            history.back();
+        }
+    });
+
+    $(window).on('popstate', function() {
+        var target = history.state && history.state.modal;
+        closingFromHistory = true;
+        $('.portfolio-modal.in').not('#' + target).modal('hide');
+        closingFromHistory = false;
+        if (target) {
+            $('#' + target).modal('show'); // forward button reopens
+        }
+    });
+});
