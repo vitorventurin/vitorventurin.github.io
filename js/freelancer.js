@@ -60,4 +60,12 @@ $(function() {
             $('#' + target).modal('show'); // forward button reopens
         }
     });
+
+    // Deeplink (e.g. /#portfolioModal-4) opens that portfolio modal on load
+    var deeplink = document.getElementById(location.hash.slice(1));
+    if (deeplink && $(deeplink).hasClass('portfolio-modal')) {
+        // Clean base entry first, so closing the modal lands on the main page
+        history.replaceState(null, '', location.pathname + location.search);
+        $(deeplink).modal('show');
+    }
 });
