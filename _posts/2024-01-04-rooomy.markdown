@@ -28,4 +28,4 @@ description: "Design your future home and shop for home furnishings through an i
 
 ### Tech
 
-ARKit, VIPER, ReplayKit, CoreData, CI/CD, unit testing
+ARKit, SceneKit, VIPER, ReplayKit, CoreData, CI/CD, unit testing

@@ -15,7 +15,7 @@ links:
   - title: Google Play
     url: https://play.google.com/store/apps/details?id=io.github.vitorventurin.musicalibre_android
     icon: fa-brands fa-google-play
-description: "MOJO is a free, ad-free music player that brings your scattered music collection together in one place. Import tracks from YouTube, YouTube Music, Bandcamp, and SoundCloud, and MOJO organizes everything into a clean library by artist, album, and playlist, with a built-in player. Everything lives on your device: no cloud required. It is the mobile evolution of Musicalibre, the original web scraper."
+description: "MOJO is a free, ad-free music player that brings your scattered music collection together in one place. Import tracks from YouTube, YouTube Music, Bandcamp, and SoundCloud, and MOJO organizes everything into a clean library by artist, album, and playlist, with a built-in player. Everything lives on your device: no cloud required. It is the mobile evolution of Musicalibre, the original web app."
 ---
 
 **Role:** Founder and sole developer, from product and design to both native apps and release.

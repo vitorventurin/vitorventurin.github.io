@@ -1,0 +1,24 @@
+---
+layout: default
+modal-id: 14
+date: 2024-01-08
+img: deloitte.png
+alt: Deloitte
+project-date: 2019-2021
+client: Deloitte
+category: Enterprise iOS
+icon: fas fa-cogs
+extra-img: assets/img/portfolio/thedo.png
+description: "At Deloitte I built enterprise iOS applications, including a solution that uses Vision to report defective machines at the office."
+---
+
+**Role:** iOS Engineer.
+
+### Highlights
+
+- Built enterprise iOS applications for internal use.
+- Built an app that uses Vision and CoreML to recognise and report defective machines at the office.
+
+### Tech
+
+Swift, UIKit, Vision, CoreML, MVVM, XCTest, CI/CD
